@@ -16,7 +16,7 @@ payload = {
     'password': password
 }
 
-r = requests.post("https://apis.goflipr.com/OAuth2/token", 
+r = requests.post("https://apis.goflipr.com/OAuth2/token",
     headers={"Content-Type":"application/x-www-form-urlencoded"},
     data=payload)
 
