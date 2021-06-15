@@ -1,0 +1,15 @@
+version: '3'
+services:
+  webserver:
+    image: flipr-webserver:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - web_path:/usr/share/nginx/html/
+    restart: always
+  getdata:
+    image: flipr-getdata:latest
+    volumes:
+      - web_path:/usr/share/nginx/html/
+volumes:
+  web_path: {}

@@ -3,6 +3,7 @@
 import requests
 import json
 import sys
+import io
 
 BASE_URL_GET_TOKEN = 'https://apis.goflipr.com/OAuth2/token?grant_type=password&password=Ght1v%26l0&username=duprefm@gmail.com'
 BASE_URL_GET_DATA = 'https://apis.goflipr.com/modules/1A1C74/survey/LastHours/24'
@@ -32,5 +33,5 @@ auth_response = requests.get(BASE_URL_GET_DATA, headers=headers)
 
 #print(auth_response.json())
 
-with open('FliprData.json', 'w') as f:
+with io.open('FliprData.json', 'w', encoding='utf8') as f:
     print(auth_response.json(), file=f)
