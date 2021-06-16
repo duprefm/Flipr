@@ -5,11 +5,11 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - web_path:/usr/share/nginx/html/
+      - web_path:/usr/share/nginx/html/:rw
     restart: always
   getdata:
     image: flipr-getdata:latest
     volumes:
-      - web_path:/usr/share/nginx/html/
+      - web_path:/usr/share/nginx/html/:rw
 volumes:
   web_path: {}
