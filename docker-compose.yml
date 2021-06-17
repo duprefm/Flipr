@@ -1,15 +1,20 @@
 version: '3'
 services:
   webserver:
+    #depends_on: getdata
+    #build: ./web/
     image: flipr-webserver:latest
     ports:
       - "8080:80"
     volumes:
-      - web_path:/usr/share/nginx/html/:rw
+      - web:/usr/share/nginx/html/
+      - code:/usr/local/src/
     restart: always
   getdata:
+    #build: ./python/
     image: flipr-getdata:latest
     volumes:
-      - web_path:/usr/share/nginx/html/:rw
+      - code:/usr/local/src/
 volumes:
-  web_path: {}
+  web: {}
+  code: {}

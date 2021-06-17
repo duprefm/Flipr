@@ -31,7 +31,7 @@ token = (y["access_token"])
 headers = {'Authorization': "Bearer {}".format(token)}
 auth_response = requests.get(BASE_URL_GET_DATA, headers=headers)
 
-#print(auth_response.json())
+print(auth_response.json())
 
 with io.open('FliprData.json', 'w', encoding='utf8') as f:
     print(auth_response.json(), file=f)
